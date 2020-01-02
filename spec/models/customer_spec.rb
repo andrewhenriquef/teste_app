@@ -13,7 +13,8 @@ RSpec.describe Customer, type: :model do
   end
 
   it 'Create another customer using factory bot' do
-    customer = create(:customer)
+    # aliases
+    customer = create(:user_customer) # or create(:customer)
 
     expect(customer.full_name).to eq("Sr. #{customer.name}")
     expect(customer.full_name).to start_with('Sr. ')

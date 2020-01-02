@@ -21,4 +21,21 @@ RSpec.describe Customer, type: :model do
   end
 
   it { expect { create(:customer) }.to change { Customer.all.size }.by(1) }
+
+  it 'Factory inheritance' do
+    customer = create(:customer_default)
+
+    expect(customer.vip).to be false
+    expect(customer.days_to_pay).to eq 15
+
+    customer = create(:customer_vip)
+
+    expect(customer.vip).to be true
+    expect(customer.days_to_pay).to eq 30
+
+    customer = create(:customer)
+
+    expect(customer.vip).to be nil
+    expect(customer.days_to_pay).to be nil
+  end
 end

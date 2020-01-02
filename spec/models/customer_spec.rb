@@ -38,4 +38,11 @@ RSpec.describe Customer, type: :model do
     expect(customer.vip).to be nil
     expect(customer.days_to_pay).to be nil
   end
+
+  it 'attributes_for example' do
+    # extract attributes from an factory
+    # an hash with all values of the object: example: {:name=>"Claude Connelly", :email=>"ricardaorn@brakuslind.org", :vip=>true, :days_to_pay=>30}
+    # is it good to test apis values
+    attrs = attributes_for(:customer_vip)
+  end
 end

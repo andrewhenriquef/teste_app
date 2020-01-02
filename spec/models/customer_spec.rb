@@ -45,4 +45,18 @@ RSpec.describe Customer, type: :model do
     # is it good to test apis values
     attrs = attributes_for(:customer_vip)
   end
+
+  it 'transient attributes' do
+    # atributos que existem no momento de criação do objecto mas que não interferem
+    # no objeto de fato, eles não existem depois que o objeto foi criado, eles ajudam a criar logicas
+    # para as fabricas
+
+    customer = create(:customer_default, upcased: true)
+
+    expect(customer.full_name).to eq("Sr. #{customer.name.upcase}")
+
+    customer = create(:customer_default, upcased: false)
+
+    expect(customer.full_name).to eq("Sr. #{customer.name}")
+  end
 end

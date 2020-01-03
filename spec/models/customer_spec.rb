@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Customer, type: :model do
 
-  #basic fixtures, what factory bot && girl does behind the scenes
+  #basic Mixtures, what factory bot && girl does behind the scenes
   # fixtures :all #this call all fixtures
   fixtures :customers
 
@@ -58,5 +58,26 @@ RSpec.describe Customer, type: :model do
     customer = create(:customer_default, upcased: false)
 
     expect(customer.full_name).to eq("Sr. #{customer.name}")
+  end
+
+  it 'Traits example' do
+    customer = create(:customer_vip, :male)
+
+    expect(customer.gender).to eq('M')
+
+    customer = create(:customer_vip, :female)
+
+    expect(customer.gender).to eq('F')
+
+    # factory with traits
+    # can compose factory with a lot of traits
+
+    customer = create(:customer_male)
+
+    expect(customer.gender).to eq('M')
+
+    customer = create(:customer_female)
+
+    expect(customer.gender).to eq('F')
   end
 end

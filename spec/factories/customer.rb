@@ -7,6 +7,14 @@ FactoryBot.define do
     name Faker::Name.name
     email Faker::Internet.email
 
+    trait :male do
+      gender 'M'
+    end
+
+    trait :female do
+      gender 'F'
+    end
+
     # inheritance
     factory :customer_vip do
       vip true
@@ -17,6 +25,9 @@ FactoryBot.define do
       vip false
       days_to_pay 15
     end
+
+    factory :customer_male, traits: [:male]
+    factory :customer_female, traits: [:female]
 
     after(:create) do |customer, evaluator|
       customer.name.upcase! if evaluator.upcased

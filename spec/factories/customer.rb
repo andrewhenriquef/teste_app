@@ -4,8 +4,9 @@ FactoryBot.define do
       upcased false
     end
 
-    name Faker::Name.name
-    email Faker::Internet.email
+    # utilize blocks when there are dinamic attributes
+    name { Faker::Name.name }
+    email { Faker::Internet.email }
 
     trait :male do
       gender 'M'

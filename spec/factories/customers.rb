@@ -8,6 +8,7 @@ FactoryBot.define do
     # utilize blocks when there are dinamic attributes
     name { Faker::Name.name }
     email { Faker::Internet.email }
+    address { Faker::Address.street_address }
 
     # generate some data sequentially
 

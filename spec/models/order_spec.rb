@@ -16,6 +16,15 @@ RSpec.describe Order, type: :model do
   end
 
   it 'create_list example' do
+    # extra list methods
+
+    # build_list -> create a list of itens without persist them
+    # create_pair -> create a list with two itens
+    # build_pair -> create a list with two itens without persist them
+    # attributes_for_list -> extract the attributes in a hash
+    # build_stubbed -> false object, mocked object
+    # build_stubbed_list -> false object list , mocked list of objects
+
     orders = create_list(:order, 3, description: 'teste')
 
     orders.map do |order|

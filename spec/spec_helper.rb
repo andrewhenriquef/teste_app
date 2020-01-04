@@ -30,6 +30,9 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
 
+  # run tests random
+  # config.order = 'random'
+
   # preload tests and raise InvalidFactoryError if there is something missing, variables, validations, etc
   config.before(:suite) do
     FactoryBot.lint

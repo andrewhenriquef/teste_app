@@ -80,4 +80,32 @@ RSpec.describe Customer, type: :model do
 
     expect(customer.gender).to eq('F')
   end
+
+  # using rails time helper
+
+  it 'travel to' do
+    travel_to Time.zone.local(2004, 11, 24, 1, 4, 44) do
+      @customer = create(:customer_vip, :male)
+    end
+
+    expect(@customer.created_at).to eq(Time.zone.local(2004, 11, 24, 1, 4, 44))
+    expect(@customer.created_at).to be < Time.now
+
+    expect(@customer.gender).to eq('M')
+
+    customer = create(:customer_vip, :female)
+
+    expect(customer.gender).to eq('F')
+
+    # factory with traits
+    # can compose factory with a lot of traits
+
+    customer = create(:customer_male)
+
+    expect(customer.gender).to eq('M')
+
+    customer = create(:customer_female)
+
+    expect(customer.gender).to eq('F')
+  end
 end

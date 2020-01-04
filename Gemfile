@@ -41,6 +41,7 @@ group :development, :test do
   gem 'faker', '~> 1.6', '>= 1.6.6'
   gem 'httparty'
   gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :customer, aliases: [:user_customer] do
     transient do
       upcased false
+      qtt_orders 3
     end
 
     # utilize blocks when there are dinamic attributes
@@ -26,6 +27,12 @@ FactoryBot.define do
       gender 'F'
     end
 
+    trait :with_orders do
+      after(:create) do |customer, evaluator|
+        create_list(:order, evaluator.qtt_orders, customer: customer)
+      end
+    end
+
     # inheritance
     factory :customer_vip do
       vip true
@@ -39,6 +46,7 @@ FactoryBot.define do
 
     factory :customer_male, traits: [:male]
     factory :customer_female, traits: [:female]
+    factory :customer_with_orders, traits: [:male, :with_orders]
 
     # this is a callback
     after(:create) do |customer, evaluator|

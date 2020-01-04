@@ -24,4 +24,12 @@ RSpec.describe Order, type: :model do
 
     expect(orders.count).to eq 3
   end
+
+  it 'has_many associoation example' do
+    customer = create(:customer_with_orders)
+    expect(customer.orders.count).to eq 3
+
+    customer = create(:customer_with_orders, qtt_orders: 5)
+    expect(customer.orders.count).to eq 5
+  end
 end

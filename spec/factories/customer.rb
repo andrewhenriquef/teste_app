@@ -14,9 +14,9 @@ FactoryBot.define do
     # sequence(:email, 25) {|n| "my-email-#{n}@gmail.com"}
 
     # sequence(:email, 'a') {|n| "my-email-#{n}@gmail.com"} => create with 'a', 'b', 'c'
-    sequence(:email) do |n|
-      "my-email-#{n}@gmail.com"
-    end
+    # sequence(:email) do |n|
+    #   "my-email-#{n}@gmail.com"
+    # end
 
     trait :male do
       gender 'M'

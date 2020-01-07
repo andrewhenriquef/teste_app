@@ -1,5 +1,6 @@
 require 'webmock/rspec'
 require 'vcr'
+# require "shoulda/matchers/integrations/rspec"
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
@@ -29,6 +30,14 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+
+  # shoulda matchers
+  # Shoulda::Matchers.configure do |config|
+  #   config.integrate do |with|
+  #     with.test_framework :rspec
+  #     with.library :rails
+  #   end
+  # end
 
   # run tests random
   # config.order = 'random'

@@ -31,6 +31,6 @@ RSpec.describe Product, type: :model do
     expect(product.full_description).to eq("#{product.description} - #{product.price}")
   end
 
-  # it { should validate_presence_of(:description) }
-  # it { should belong_to(:category) }
+  it { should validate_presence_of(:description) }
+  it { should belong_to(:category) }
 end

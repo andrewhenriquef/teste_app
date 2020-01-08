@@ -31,14 +31,6 @@ RSpec.configure do |config|
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
 
-  # shoulda matchers
-  # Shoulda::Matchers.configure do |config|
-  #   config.integrate do |with|
-  #     with.test_framework :rspec
-  #     with.library :rails
-  #   end
-  # end
-
   # run tests random
   # config.order = 'random'
 

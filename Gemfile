@@ -57,6 +57,7 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-json_expectations'
   gem 'capybara', '~> 2.4.0'
   gem 'shoulda-matchers'
   gem 'selenium-webdriver'

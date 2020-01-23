@@ -92,5 +92,10 @@ RSpec.describe "Customers", type: :request do
       expect(response_body.fetch('name')).to be_kind_of(String)
       expect(response_body.fetch('email')).to be_kind_of(String)
     end
+
+    it 'JSON Schema' do
+      get '/customers/1.json'
+      expect(response.body).to match_response_schema('customer')
+    end
   end
 end

@@ -2,6 +2,8 @@ require 'webmock/rspec'
 require 'vcr'
 require "selenium/webdriver"
 require 'capybara'
+# json schema
+require 'json_matchers/rspec'
 
 # require "shoulda/matchers/integrations/rspec"
 

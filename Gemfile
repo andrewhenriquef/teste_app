@@ -44,6 +44,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'rails-controller-testing' # to test rails views rendering
+  gem 'json_matchers'
 end
 
 group :development do
